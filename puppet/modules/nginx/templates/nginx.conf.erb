@@ -1,0 +1,30 @@
+user nobody nobody;
+worker_processes 8;
+
+error_log /var/log/nginx/error.log debug;
+pid /var/run/nginx.pid;
+
+events {
+  worker_connections 1024;
+}
+
+http {
+  include /etc/nginx/clusters.d/*.conf;
+
+  gzip off;
+
+  server {
+    listen *:80;
+    server_name <%= hostname %>;
+
+    location /nginx_status {
+      stub_status on;
+      access_log off;
+      #allow <%= internal_network %>;
+      #deny all;
+      allow all;
+    }
+  }
+
+  include /etc/nginx/vhosts.d/*.conf;
+}
