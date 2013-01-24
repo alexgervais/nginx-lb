@@ -25,3 +25,7 @@ Then, start your ngins:
 You should be able to access the HTTP services you configured in `lb1.pp` at http://33.33.33.10 (and lb2 at http://33.33.33.20)
 
 Shutdown any of the configured HTTP services and you will still be able to access the remaining of the HTTP services through lb1.
+
+### Credits
+
+Greatly inspired by zsprackett's tutorial @ https://github.com/zsprackett/vagrant-tutorial
