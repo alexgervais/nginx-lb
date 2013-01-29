@@ -1,8 +1,7 @@
 Vagrant::Config.run do |config|
   config.vm.define :lb1 do |lb_config|
     lb_config.vm.network :hostonly, "33.33.33.10"
-    lb_config.vm.box = "squeeze64"
-    lb_config.vm.forward_port(80, 8000)
+    lb_config.vm.box = "debiansqueeze64"
     lb_config.vm.host_name = "lb1.local"
     lb_config.ssh.timeout = 300
     lb_config.ssh.max_tries = 300
@@ -13,8 +12,8 @@ Vagrant::Config.run do |config|
     end
   end
   config.vm.define :lb2 do |lb_config|
-    lb_config.vm.network :hostonly, "33.33.33.11"
-    lb_config.vm.box = "squeeze64"
+    lb_config.vm.network :hostonly, "33.33.33.20"
+    lb_config.vm.box = "debiansqueeze64"
     lb_config.vm.host_name = "lb2.local"
     lb_config.ssh.timeout = 300
     lb_config.ssh.max_tries = 300
