@@ -11,3 +11,8 @@ nginx::config::vhost{
   'lb1.local':
     cluster => 'loadbalancing',
 }
+ 
+file {
+  '/etc/udev/rules.d/70-persistent-net.rules':
+    ensure => absent
+}
