@@ -26,6 +26,12 @@ You should be able to access the HTTP services you configured in `lb1.pp` at htt
 
 Shutdown any of the configured HTTP services and you will still be able to access the remaining of the HTTP services through lb1.
 
+### Known issues
+
+Depending on the selected box, the `/etc/udev/rules.d/70-persistent-net.rules` file might not have been reset on first boot.
+The Vagrant manifest will remove the file automatically, but a `vagrant reload lb1` is required to load all the network interfaces,
+including eth1 accessible at 33.33.33.10.
+
 ### Credits
 
 Greatly inspired by zsprackett's tutorial @ https://github.com/zsprackett/vagrant-tutorial
