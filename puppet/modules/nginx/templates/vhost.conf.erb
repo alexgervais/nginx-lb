@@ -1,6 +1,6 @@
 server {
-  listen       80; 
-  server_name  <%= hostname %>;
+  listen       *:80; 
+  server_name  <%= name %>;
 
   location / {
     proxy_pass http://<%= cluster %>;

@@ -8,7 +8,7 @@ nginx::config::cluster{'loadbalancing':
   ]
 }
 nginx::config::vhost{
-  'lb2.local':
+  '33.33.33.20':
     cluster => 'loadbalancing',
 }
      
