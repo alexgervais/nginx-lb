@@ -1,12 +1,11 @@
-## This is a simple experiment with Vagrant, Puppet & nginx in 
-_creating an automatic failover load-balancer_
+## This is a simple experiment with Vagrant, Puppet & nginx in _creating an automatic failover load-balancer_
 
 ### Requirements
- * Virtual box (https://www.virtualbox.org/)
- * Vagrant (http://www.vagrantup.com/)
- * A Vagrant base box (http://www.vagrantbox.es/)
-   The base box should have puppet already installed. This experiment was performed using a Debian Squeeze 64 box :
-    ```bash
+ * Virtual box (https://www.virtualbox.org/, v4.2.6 +)
+ * Vagrant (http://www.vagrantup.com/, v1.0.6 +)
+ * A Vagrant base box (http://www.vagrantbox.es/). The base box should have puppet already installed. This experiment was performed using a Debian Squeeze 64 box.
+ 
+    ```
       cd nginx-lb
       vagrant box add debiansqueeze64 https://s3-sa-east-1.amazonaws.com/willian-boxes/DebianSqueeze64.box
     ```
@@ -16,8 +15,8 @@ _creating an automatic failover load-balancer_
 Configure the `lb1.pp` (and optionnaly `lb2.pp`) manifests located in `nginx-lb/puppet/vagrant-manifests` so the `servers` arrays points
 to two or more distinct HTTP services running on a local or distant host.
 
-Then, start your ngins:
- ```bash
+Then, start your ngins
+ ```
    cd nginx-lb
    vagrant up lb1
  ```
